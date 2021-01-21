@@ -1,0 +1,5 @@
+pytest-cov
+jupyter
+pytest
+pandas
+pylint
