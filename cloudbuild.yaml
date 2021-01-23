@@ -1,0 +1,8 @@
+step:
+-  name: 'gcr.io/cloud-builders/docker'i
+   entrypoint: 'bash'
+   args:
+   - ['make', 'setup']
+   - ['make', 'install']
+   - ['make', 'test']
+   - ['make', 'lint']
