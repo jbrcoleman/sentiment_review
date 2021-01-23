@@ -2,6 +2,7 @@ steps:
 
 - name: 'python:3.7'
   args:
+<<<<<<< HEAD
   - 'make'
   - 'setup'
 
@@ -19,3 +20,10 @@ steps:
   args:
   - 'make'
   - 'lint'
+=======
+  - ['make','setup']
+            #- ['make', 'setup']
+      #    - ['make', 'install']
+      #    - ['make', 'test']
+      #- ['make', 'lint']
+>>>>>>> 85980c5e0b459b3d54a27c579e390ae119eb4131
