@@ -5,7 +5,7 @@ install:
 	pip install -r requirements.txt
 
 test:
-	PYTHONPATH=. && python -m pytest -vv --cov=sentiment_review tests/*.py
+	python3 -m pytest -vv --cov=sentiment_review tests/*.py
 
 lint:
 	pylint --disable=R,C tests/*.py sentiment_review/*.py
