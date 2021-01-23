@@ -1,8 +1,7 @@
 steps:
 - name: 'python:3.7'
   args:
-  - 'make'
-  - 'setup'
+  - ['make','setup']
             #- ['make', 'setup']
       #    - ['make', 'install']
       #    - ['make', 'test']
