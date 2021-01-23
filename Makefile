@@ -8,4 +8,4 @@ test:
 	python3 -m pytest -vv --cov=sentiment_review tests/*.py
 
 lint:
-	pylint --disable=R,C tests/*.py sentiment_review/*.py
+	python3 -m pylint --disable=R,C tests/*.py sentiment_review/*.py
