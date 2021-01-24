@@ -2,6 +2,7 @@ setup:
 	python3 -m venv ~/.sentiment-reviews
 
 install:
+	pip install --upgrade pip &&\
 	pip install -r requirements.txt --user
 
 test:
