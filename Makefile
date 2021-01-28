@@ -3,7 +3,7 @@ install:
 	pip install -r requirements.txt --user
 
 format:
-	black *.py
+	python3 -m black *.py
 
 test:
 	python3 -m pytest -vv --cov=sentiment_review tests/*.py
