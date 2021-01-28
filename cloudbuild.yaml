@@ -3,11 +3,11 @@ steps:
 - name: 'python:3.7'
   args:
   - 'make'
-  - 'setup'
+  - 'install'
 - name: 'python:3.7'
   args:
   - 'make'
-  - 'install'
+  - 'format'
 - name: 'python:3.7'
   args:
   - 'make'
