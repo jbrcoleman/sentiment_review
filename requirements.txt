@@ -5,3 +5,4 @@ pandas
 pylint
 coverage
 black
+flask
