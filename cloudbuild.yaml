@@ -16,3 +16,5 @@ steps:
   args:
   - 'make'
   - 'lint'
+- name: "gcr.io/cloud-builders/gcloud"
+  args: ["app", "deploy"]
