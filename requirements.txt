@@ -6,3 +6,4 @@ pylint
 coverage
 black
 flask
+google-cloud
