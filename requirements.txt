@@ -7,3 +7,6 @@ coverage
 black
 flask
 google-cloud
+google-cloud-bigquery
+google-cloud-storage
+google-cloud-core
