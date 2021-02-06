@@ -1,6 +1,9 @@
+setup:
+	python3 -m venv ~/.sentiment &&\
+	source ~/.sentiment/bin/activate
 install:
 	pip3 install --upgrade pip &&\
-	pip3 install -r requirements.txt --user
+	pip3 install -r requirements.txt
 
 format:
 	python3 -m black sentiment_review/*.py tests/*.py
