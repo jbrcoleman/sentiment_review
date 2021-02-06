@@ -3,7 +3,7 @@ from google.cloud import bigquery
 # Construct a BigQuery client object.
 client = bigquery.Client()
 
-# TODO(developer): Set table_id to the ID of the table to create.
+#Set table_id to the ID of the table to create.
 table_id = "reviews.reviews"
 
 job_config = bigquery.LoadJobConfig(
