@@ -11,3 +11,4 @@ google-cloud-bigquery
 google-cloud-storage
 google-cloud-core
 nltk
+mock
