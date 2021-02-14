@@ -22,12 +22,12 @@ def test_multiply():
 #    ingest('yelp_academic_dataset_review.json')
 #    assert os.path.isfile('yelp_academic_dataset_review.json')
 
-def test_upload():
+#def test_upload():
     #find_date
-    DATE = time.strftime("%Y%m%d")
-    file_name=sentiment_review.pipeline.upload()
+#    DATE = time.strftime("%Y%m%d")
+#    file_name=sentiment_review.pipeline.upload()
 
-    assert file_name == f"yelp_reviews-{DATE}.csv" 
+#    assert file_name == f"yelp_reviews-{DATE}.csv" 
 
 #def test_upload():
 #        storage_client = mock.create_autospec(Client)
