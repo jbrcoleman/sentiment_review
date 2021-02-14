@@ -95,7 +95,7 @@ def transform_json_to_csv():
     reviewdf['text']=reviewdf['text'].apply(lambda x: text_clean(x))# pylint: disable=W0108
     reviewdf['text']=reviewdf['text'].apply(lambda x: remove_punc(x))# pylint: disable=W0108
     stop_words = set(stopwords.words('english'))
-    reviewdf['text']=reviewdf['text'].apply(lambda x: remove_stopwords(x,stop_words))
+    reviewdf['text']=reviewdf['text'].apply(lambda x: remove_stopwords(x,stop_words))# pylint: disable=W0108
     
     #Convert to CSV
     yelp_csv =f"../data/yelp_reviews-{DATE}.csv"

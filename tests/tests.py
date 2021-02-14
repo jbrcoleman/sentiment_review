@@ -1,10 +1,10 @@
 from sentiment_review.main import multiply
-import sentiment_review.pipeline
-from google.cloud.storage import Blob
-from google.cloud.storage import Client
-from google.cloud.storage import Bucket
-import time
-import mock
+#import sentiment_review.pipeline
+#from google.cloud.storage import Blob
+#from google.cloud.storage import Client
+#from google.cloud.storage import Bucket
+#import time
+#import mock
 
 
 def test_multiply():
