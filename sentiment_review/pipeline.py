@@ -29,13 +29,11 @@ bigquery_client = bigquery.Client()
 #find_date
 DATE = time.strftime("%Y%m%d")
 
-def ingest(**kwargs):
+def ingest(file_link=None):
     '''
     Ingest file from bucket to local machine
     '''
-    if kwargs:
-        file_link=kwargs[0]
-    else:
+    if not file_link:
         file_link='gs://reviews_yelp/yelp_academic_dataset_review.json'
     folder='data/'
     # Create this folder locally if not exists
@@ -94,8 +92,8 @@ def transform_json_to_csv():
     #Create Dataframe
     reviewdf=pd.concat(chunk_list, ignore_index=True, join='outer', axis=0)
     reviewdf['labels']  = np.where(reviewdf['stars']>3,1,0)
-    reviewdf['text']=reviewdf['text'].apply(lambda x: text_clean(x))
-    reviewdf['text']=reviewdf['text'].apply(lambda x: remove_punc(x))
+    reviewdf['text']=reviewdf['text'].apply(lambda x: text_clean(x))# pylint: disable=W0108
+    reviewdf['text']=reviewdf['text'].apply(lambda x: remove_punc(x))# pylint: disable=W0108
     stop_words = set(stopwords.words('english'))
     reviewdf['text']=reviewdf['text'].apply(lambda x: remove_stopwords(x,stop_words))
     
@@ -144,20 +142,18 @@ def load_to_bigquery():
 
     destination_table = bigquery_client.get_table(table_id)  # Make an API request.
     print("Loaded {} rows.".format(destination_table.num_rows))
+    
+def run(file):
+    ingest(file)
+    transform_json_to_csv()
+    upload()
+    load_to_bigquery()
 
+    
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Pass a yelp review json file to be uploaded to big query')
     parser.add_argument('-f','--file', action="store", default=None)
     args = parser.parse_args()
     
-    if args.file is None:
-        ingest()
-        transform_json_to_csv()
-        upload()
-        load_to_bigquery()
-    else:
-        ingest(args.file)
-        transform_json_to_csv()
-        upload()
-        load_to_bigquery()
+    run(args.file)
 
