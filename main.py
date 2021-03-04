@@ -1,7 +1,7 @@
 import json
 import requests
 from flask import jsonify
-from flask import Flask, render_template
+from flask import Flask, render_template,request
 from sentiment_review.predictions import predict
 app = Flask(__name__)
 
@@ -17,7 +17,7 @@ def hello_form():
             print(r)
         except:
             errors.append(
-                "Unable to get predictino."
+                "Unable to get prediction."
             )
     return render_template('text_form.html',errors=errors, results=results)
 
