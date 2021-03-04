@@ -1,11 +1,25 @@
 import json
+import requests
 from flask import jsonify
 from flask import Flask, render_template
+from sentiment_review.predictions import predict
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/',  methods=['GET', 'POST'])
 def hello_form():
-    return render_template('text_form.html')
+    errors = []
+    results = {}
+    if request.method == "POST":
+        # get url that the user has entered
+        try:
+            review = request.form['review']
+            r= predict(review)
+            print(r)
+        except:
+            errors.append(
+                "Unable to get predictino."
+            )
+    return render_template('text_form.html',errors=errors, results=results)
 
 @app.route('/hello/<name>')
 def echo(name):
