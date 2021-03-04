@@ -4,7 +4,7 @@ from sentiment_review.pipeline import remove_punc
 from sentiment_review.pipeline import text_clean
 from nltk.corpus import stopwords
 import nltk
-nltk.download()
+nltk.download('all')
 # import sentiment_review.pipeline
 # from google.cloud.storage import Blob
 # from google.cloud.storage import Client
