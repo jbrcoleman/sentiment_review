@@ -3,6 +3,7 @@ import requests
 from flask import jsonify
 from flask import Flask, render_template,request
 from sentiment_review.predictions import predict
+from sentiment_review.load_into_bigquery import load_to_bigquery
 import logging
 app = Flask(__name__)
 
@@ -19,6 +20,8 @@ def hello_form():
             review = request.form['review']
             r= predict(review)
             app.logger.info("review: %s", r)
+            
+            load_to_bigquery("reviews.predictions",review,r)
             
             json_review=(f"Review: {review}, Sentiment: {r}")
             return jsonify(json_review)
