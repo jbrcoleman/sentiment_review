@@ -3,7 +3,7 @@ from google.cloud import bigquery
 # Construct a BigQuery client object.
 client = bigquery.Client()
 
-#Set table_id to the ID of the table to create.
+# Set table_id to the ID of the table to create.
 table_id = "reviews.reviews"
 
 job_config = bigquery.LoadJobConfig(
@@ -11,7 +11,7 @@ job_config = bigquery.LoadJobConfig(
         bigquery.SchemaField("stars", "INTEGER"),
         bigquery.SchemaField("text", "STRING"),
     ],
-    allow_quoted_newlines= True,
+    allow_quoted_newlines=True,
     ignore_unknown_values=True,
     max_bad_records=10,
     # The source format defaults to CSV, so the line below is optional.

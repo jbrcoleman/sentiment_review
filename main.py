@@ -3,7 +3,11 @@ import requests
 from flask import jsonify
 from flask import Flask, render_template,request
 from sentiment_review.predictions import predict
+import logging
 app = Flask(__name__)
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 @app.route('/',  methods=['GET', 'POST'])
 def hello_form():
@@ -14,7 +18,11 @@ def hello_form():
         try:
             review = request.form['review']
             r= predict(review)
-            print(r)
+            app.logger.info("review: %s", r)
+            
+            json_review=(f"Review: {review}, Sentiment: {r}")
+            return jsonify(json_review)
+
         except:
             errors.append(
                 "Unable to get prediction."
@@ -33,4 +41,4 @@ def test(name):
 
 
 if __name__=='__main__':
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    app.run(host='127.0.0.1', port=8088, debug=True)

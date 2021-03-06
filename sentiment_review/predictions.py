@@ -24,3 +24,7 @@ def predict(content):
                 annotation_payload.text_sentiment.sentiment
             )
         )
+        return annotation_payload.text_sentiment.sentiment
+
+if __name__=='__main__':
+    predict("test")
