@@ -18,3 +18,6 @@ def load_to_bigquery(table_id,review,sentiment):
         print("New rows have been added.")
     else:
         print("Encountered errors while inserting rows: {}".format(errors))
+        
+if __name__=='__main__':
+    load_to_bigquery("reviews.predictions","This place was amazing",1)
