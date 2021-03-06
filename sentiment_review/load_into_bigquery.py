@@ -7,10 +7,10 @@ def load_to_bigquery(table_id,review,sentiment):
     """
     load json record into bigquery Yelp review table
     """
-    review= unicode(review, "utf-8")
-    sentiment= unicode(sentiment, "utf-8")
+    review= str(review)
+    sentiment= int(sentiment)
     rows_to_insert=[
-    {u"Review": review, u"Sentiment": sentiment},
+    {"Review": review, "Sentiment": sentiment},
     ]
     
     errors = client.insert_rows_json(table_id, rows_to_insert)  # Make an API request.
