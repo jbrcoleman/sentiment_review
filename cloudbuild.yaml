@@ -21,7 +21,9 @@ steps:
   - 'make'
   - 'lint'
 - name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy"]
+  args: 
+  - ['-c', 'export SENDGRID_API_KEY=$$SENDGRID_API_KEY']
+  - ["app", "deploy"]
   secretEnv: ['SENDGRID_API_KEY']
 availableSecrets:
   secretManager:
