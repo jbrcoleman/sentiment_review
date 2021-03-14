@@ -19,8 +19,8 @@ def email(sendee_email="jbrcoleman@gmail.com",sentiment=1):
         print(response.status_code)
         print(response.body)
         print(response.headers)
-    except Exception as e: #disable=W0703
-        print(e.message) #disable=E1101
+    except Exception as e: # pylint: disable=W0703
+        print(e.message) # pylint: disable=E1101
 
 if __name__=='__main__':
     email()
