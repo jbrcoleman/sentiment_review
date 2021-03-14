@@ -22,3 +22,7 @@ steps:
   - 'lint'
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
+availableSecrets:
+  secretManager:
+  - versionName: project/dynamic-aurora-302220/secrets/Send_Grid/versions/1
+    env: 'SENDGRID_API_KEY'
