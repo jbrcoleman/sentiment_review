@@ -22,6 +22,7 @@ steps:
   - 'lint'
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
+  secretEnv: 'SENDGRID_API_KEY'
 availableSecrets:
   secretManager:
   - versionName: projects/388206994756/secrets/Send_Grid
