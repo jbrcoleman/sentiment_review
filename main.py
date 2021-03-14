@@ -23,7 +23,8 @@ def hello_form():
             app.logger.info("review: %s", r)
             
             load_to_bigquery("reviews.predictions",review,r)
-            
+           
+           #send email
             if request.form["email"]:
                 email=request.form["email"]
                 email(email,r)
