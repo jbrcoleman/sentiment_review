@@ -25,5 +25,5 @@ steps:
   secretEnv: ['SENDGRID_API_KEY']
 availableSecrets:
   secretManager:
-  - versionName: projects/388206994756/secrets/Send_Grid
+  - versionName: projects/388206994756/secrets/Send_Grid/versions/1
     env: 'SENDGRID_API_KEY'
