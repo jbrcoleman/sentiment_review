@@ -19,15 +19,13 @@ def hello_form():
         # get url that the user has entered
         try:
             review = request.form['review']
+            email_form=request.form["email"]
             r= predict(review)
             app.logger.info("review: %s", r)
             
             load_to_bigquery("reviews.predictions",review,r)
-           
-           #send email
-            if request.form["email"]:
-                email=request.form["email"]
-                email(email,r)
+            
+            email(email_form,r)
     
             json_review=(f"Review: {review}, Sentiment: {r}")
             return jsonify(json_review)
