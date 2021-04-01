@@ -14,20 +14,31 @@ textarea {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+label {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
 }`
 </style>
 </head>
 <body>
 <div class="container">
-      <h1>Review</h1>
+      <p style="color:white">
+      <h1>
+      <p style="color:white">
+      Enter Review
+      </p>
+      </h1>
       <form role="form" method='POST' action='/'>
         <div class="form-group">
 	<textarea name="review" cols="25" rows="5" placeholder="Enter Review...">
 	</textarea>
-	</div>
-	<div>
+	<p style="color:white">
 	<label for="email">Enter your email:</label>
+	</p>
         <input type="email" id="email" name="email">
+	</p>
 	</div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>

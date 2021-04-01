@@ -26,8 +26,14 @@ def hello_form():
             load_to_bigquery("reviews.predictions",review,r)
             
             email(email_form,r)
-    
-            json_review=(f"Review: {review}, Sentiment: {r}")
+            
+            if r = 0:
+                sentiment="Negative Review"
+            else:
+                sentiment= "Positive Review"
+
+            json_review=(f"Review: {review}, Sentiment: {sentiment}.\
+                         Please Check your email for message from company. Thank you for the review!")
             return jsonify(json_review)
 
         except:
