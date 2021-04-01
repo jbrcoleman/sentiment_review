@@ -27,13 +27,12 @@ def hello_form():
             
             email(email_form,r)
             
-            if r = 0:
+            if r == 0:
                 sentiment="Negative Review"
             else:
                 sentiment= "Positive Review"
 
-            json_review=(f"Review: {review}, Sentiment: {sentiment}.\
-                         Please Check your email for message from company. Thank you for the review!")
+            json_review=(f"Review: {review}, Sentiment: {sentiment}. Please Check your email for message from company. Thank you for the review!")
             return jsonify(json_review)
 
         except:

@@ -6,12 +6,12 @@ def email(sendee_email="jbrcoleman@gmail.com",sentiment=1):
     if sentiment==1:
         content= "Thank you for the review! Glad you had a great time and hope to see you again!"
     else:
-        content= "Sorry, that you didn't have a wonderful time. Please accept this promo code for 50% off your next experience: PROMO: SPRINGFUN2021 "
+        content= "Sorry, that you didn't have a wonderful time. Please accept this promo code for 50% off your next experience! PROMO: SPRINGFUN2021"
 
     message = Mail(
         from_email=sendee_email,
         to_emails='jbrcoleman@gmail.com',
-        subject='Sending with Twilio SendGrid is Fun',
+        subject='Coleman Corporation',
         html_content=f'<strong> {content} </strong>')
     try:
         sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))

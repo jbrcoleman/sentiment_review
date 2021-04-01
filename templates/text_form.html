@@ -10,37 +10,34 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+h1 {
+   color: white;
+}
 textarea {
     display: block;
+    color: white;
     margin-left: auto;
     margin-right: auto;
 }
 label {
     display: block;
+    color: white;
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
 }`
 </style>
 </head>
 <body>
 <div class="container">
-      <p style="color:white">
-      <h1>
-      <p style="color:white">
-      Enter Review
-      </p>
-      </h1>
+      <h1>Enter Review</h1>
       <form role="form" method='POST' action='/'>
         <div class="form-group">
 	<textarea name="review" cols="25" rows="5" placeholder="Enter Review...">
 	</textarea>
-	<p style="color:white">
 	<label for="email">Enter your email:</label>
-	</p>
         <input type="email" id="email" name="email">
-	</p>
 	</div>
         <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-</body>
+     </form>
 </html>
+
