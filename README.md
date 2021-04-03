@@ -1,12 +1,12 @@
-# Welcome to GitHub
+# Sentiment Analysis Project
 
-Welcome to GitHub—where millions of developers work together on software. Ready to get started? Let’s learn how this all works by building and publishing your first GitHub Pages website!
+This project used sentiment analysis on reviews posted to a python web app. The goal of this project was to create an automated process to connect with customers by sending them emails based on their emails. Customers who post negative reviews are sent emails with 50% off coupons to make up for their negative experince with the Coleman Company.
 
-## Repositories
+**Web APP link:** dynamic-aurora-302220.uc.r.appspot.com
 
-Right now, we’re in your first GitHub **repository**. A repository is like a folder or storage space for your project. Your project's repository contains all its files such as code, documentation, images, and more. It also tracks every change that you—or your collaborators—make to each file, so you can always go back to previous versions of your project if you make any mistakes.
+## Sentiment Anaylsis
 
-This repository contains three important files: The HTML code for your first website on GitHub, the CSS stylesheet that decorates your website with colors and fonts, and the **README** file. It also contains an image folder, with one image file.
+For this project I used Google's natural language automl service to build a sentiment analysis model. For the training data I used a dataset from Yelp that contained 8 million reviews. Before training the project the data was cleaned then stored into BigQuery for retrieval and analysis. 
 
 ## Describe your project
 
