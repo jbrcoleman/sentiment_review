@@ -2,7 +2,7 @@
 
 This project used sentiment analysis on reviews posted to a python web app. The goal of this project was to create an automated process to connect with customers by sending them emails based on their emails. Customers who post negative reviews are sent emails with 50% off coupons to make up for their negative experince with the Coleman Company.
 
-**Web APP link:** [Sentiment Analysis](dynamic-aurora-302220.uc.r.appspot.com)
+**Web APP link:** [Sentiment Analysis](https://dynamic-aurora-302220.uc.r.appspot.com)
 
 ## Sentiment Anaylsis
 
